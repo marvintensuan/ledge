@@ -3,6 +3,8 @@ Lib
 Scripts
 pyvenv.cfg
 
+# Config file
+config.toml
 
 # Scratch files
 sample.py
