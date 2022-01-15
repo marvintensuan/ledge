@@ -7,7 +7,7 @@ class Transactions(SQLModel):
     date: date
     account: str
     amount: Decimal = Field(decimal=2)
-    category: TransactionCategory
+    category: TransactionCategory | None
     description: str
 
 class TransactionCategory(str, Enum):
