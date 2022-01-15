@@ -2,12 +2,13 @@ from datetime import date
 from decimal import Decimal
 from enum import Enum
 
+from pydantic import condecimal
 from sqlmodel import SQLModel, Field
 
 class Transactions(SQLModel):
     date: date
     account: str
-    amount: Decimal = Field(decimal=2)
+    amount: condecimal(decimal_places=2) = Field(default=0)
     category: TransactionCategory | None
     description: str
 
