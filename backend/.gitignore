@@ -6,6 +6,8 @@ pyvenv.cfg
 # Config file
 config.toml
 
+#db
+*.db
+
 # Scratch files
 sample.py
-example.db
