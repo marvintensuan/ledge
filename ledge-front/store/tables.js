@@ -4,3 +4,9 @@ export const state = () => {
   }
   return tables
 }
+
+export const mutations = {
+  addTransaction(state, txn) {
+    state.transactions = [...state.transactions, ...txn]
+  }
+}
