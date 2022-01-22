@@ -1,7 +1,10 @@
+# Python environments
 Include
 Lib
 Scripts
 pyvenv.cfg
+__pycache__
+*.pyc
 
 # Config file
 config.toml
