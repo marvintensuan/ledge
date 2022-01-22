@@ -1,0 +1,8 @@
+[db]
+url=""
+
+[nuxt]
+allow_origins = []
+allow_credentials=true
+allow_methods=["*"]
+allow_headers=["*"]
