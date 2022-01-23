@@ -11,7 +11,7 @@ export default {
     }
   },
   computed: {
-    transactions() { return this.$store.state.tables.transactions} 
+    transactions() { return this.$store.state.tables.transactions } 
   },
   filters: {
     accounting(n) {
