@@ -1,4 +1,7 @@
 <script>
+
+let formatter = new Intl.NumberFormat('en-US')
+
 export default {
   async fetch(){
     let isEmpty = this.$store.state.tables.transactions
@@ -9,6 +12,11 @@ export default {
   },
   computed: {
     transactions() { return this.$store.state.tables.transactions} 
+  },
+  filters: {
+    accounting(n) {
+      return formatter.format(n)
+    }
   }
 }
 </script>
@@ -30,7 +38,7 @@ export default {
         <tr v-for="transaction in transactions" :key="transaction.id">
           <td>{{ transaction.date }}</td>
           <td>{{ transaction.account }}</td>
-          <td>{{ transaction.amount }}</td>
+          <td >{{ transaction.amount | accounting }}</td>
           <td>{{ transaction.category }}</td>
           <td>{{ transaction.description }}</td>
         </tr>
