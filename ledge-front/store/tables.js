@@ -1,9 +1,4 @@
-export const state = () => {
-  let tables = {
-    'transactions': []
-  }
-  return tables
-}
+export const state = () => ({ 'transactions': [] })
 
 export const mutations = {
   addTransaction(state, txn) {
