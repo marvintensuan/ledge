@@ -1,6 +1,6 @@
 <script>
 export default {
-  async fetch(){
+  async fetch() {
     let isEmpty = this.$store.state.tables.transactions
     if (!isEmpty.length) {
       let results = await this.$axios.get("http://127.0.0.1:8000/tables/transactions")
@@ -8,7 +8,7 @@ export default {
     }
   },
   computed: {
-    transactions() { return this.$store.state.tables.transactions } 
+    transactions() { return this.$store.state.tables.transactions }
   }
 }
 </script>
@@ -30,7 +30,7 @@ export default {
         <tr v-for="transaction in transactions" :key="transaction.id">
           <td>{{ transaction.date }}</td>
           <td>{{ transaction.account }}</td>
-          <td>{{ transaction.amount.toLocaleString('en-US', {minimumFractionDigits: 2}) }}</td>
+          <td>{{ transaction.amount.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</td>
           <td>{{ transaction.category }}</td>
           <td>{{ transaction.description }}</td>
         </tr>
