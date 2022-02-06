@@ -12,6 +12,16 @@ This project is currently WIP in early stages.
 
 ## Set-up instructions
 
+### Dependencies
+
+Python
+- Python 3.10
+- fastapi 0.71.0
+
+JS
+- Node v16.13.0
+- Nuxt 2.15.7
+
 ### FastAPI
 
 `config.toml` - create a configuration file using `config.toml.txt` as a template.
