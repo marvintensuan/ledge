@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <main>
+  <main class="flex">
     <TransactionsTable :tableData="transactions" />
   </main>
 </template>
