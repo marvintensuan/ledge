@@ -22,10 +22,10 @@
           <td class="w-36">{{ transaction.category }}</td>
           <td class="w-36">{{ transaction.description }}</td>
         </tr>
-        <TransactionsAddRow />
+        <TransactionsAddRow @formData="(rowData) => (this.newRowData = rowData)" />
       </tbody>
     </table>
-    <form id="newEntry" class="m-auto mt-5">
+    <form id="newEntry" action="post" class="m-auto mt-5">
       <button type="button" @click="submitTable">Submit</button>
     </form>
   </div>
@@ -40,6 +40,7 @@ export default {
   data() {
     return {
       tableHeaders: ['Date', 'Account', 'Amount (PHP)', 'Category', 'Description'],
+      newRowData: null,
     }
   },
   components: { TransactionsAddRow },
