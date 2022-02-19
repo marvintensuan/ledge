@@ -4,9 +4,7 @@ export default {
   async fetch() {
     let isEmpty = this.$store.state.tables.transactions
     if (!isEmpty.length) {
-      let results = await this.$axios.get(
-        'http://127.0.0.1:8000/tables/transactions'
-      )
+      let results = await this.$axios.get('http://127.0.0.1:8000/tables/transactions')
       this.$store.commit('tables/addTransaction', results.data)
     }
   },

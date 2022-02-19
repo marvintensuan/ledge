@@ -9,11 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="transaction in tableData"
-          :key="transaction.id"
-          class="divide-y divide-gray-200"
-        >
+        <tr v-for="transaction in tableData" :key="transaction.id" class="divide-y divide-gray-200">
           <td>{{ transaction.date }}</td>
           <td class="w-36">{{ transaction.account }}</td>
           <td class="w-32 text-right">
@@ -36,12 +32,7 @@
             </select>
           </td>
           <td>
-            <input
-              type="number"
-              form="newEntry"
-              value="0.00"
-              class="text-right"
-            />
+            <input type="number" form="newEntry" value="0.00" class="text-right" />
           </td>
           <td><input type="text" form="newEntry" value="..." /></td>
           <td><input type="text" form="newEntry" value="..." /></td>
@@ -49,12 +40,7 @@
       </tbody>
     </table>
     <form id="newEntry" class="m-auto mt-5">
-      <button
-        type="button"
-        onclick="javascript:console.log(document.getElementById('newEntry').data)"
-      >
-        Submit
-      </button>
+      <button type="button" onclick="javascript:console.log(document.getElementById('newEntry').data)">Submit</button>
     </form>
   </div>
 </template>
@@ -66,13 +52,7 @@ export default {
   },
   data() {
     return {
-      tableHeaders: [
-        'Date',
-        'Account',
-        'Amount (PHP)',
-        'Category',
-        'Description',
-      ],
+      tableHeaders: ['Date', 'Account', 'Amount (PHP)', 'Category', 'Description'],
     }
   },
 }
