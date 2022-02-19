@@ -1,16 +1,16 @@
 <template>
   <tr class="bg-gray-300">
-    <td><input type="date" form="newEntry" v-model="addRow.dateToday" /></td>
+    <td><input type="date" v-model="formData.dateToday" /></td>
     <td>
-      <select form="newEntry" class="w-36" v-model="addRow.selectedAccount">
+      <select class="w-36" v-model="formData.selectedAccount">
         <option v-for="account in bankAccounts">{{ account }}</option>
       </select>
     </td>
     <td>
-      <input type="number" form="newEntry" v-model.number="addRow.amt" class="text-right" />
+      <input type="number" v-model.number="formData.amt" class="text-right" />
     </td>
-    <td><input type="text" form="newEntry" v-model="addRow.category" /></td>
-    <td><input type="text" form="newEntry" v-model="addRow.desc" /></td>
+    <td><input type="text" v-model="formData.category" /></td>
+    <td><input type="text" v-model="formData.desc" /></td>
   </tr>
 </template>
 
@@ -18,7 +18,7 @@
 export default {
   data: function () {
     return {
-      addRow: {
+      formData: {
         dateToday: new Date().toISOString().split('T')[0],
         selectedAccount: '',
         amt: 0,
@@ -34,9 +34,7 @@ export default {
     },
   },
   mounted() {
-    console.log('Emitting...')
-    console.log(this.addRow)
-    this.$emit('formData', this.addRow)
+    this.$emit('formData', this.formData)
   },
 }
 </script>

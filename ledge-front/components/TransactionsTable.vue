@@ -22,7 +22,7 @@
           <td class="w-36">{{ transaction.category }}</td>
           <td class="w-36">{{ transaction.description }}</td>
         </tr>
-        <TransactionsAddRow @formData="(rowData) => (this.newRowData = rowData)" />
+        <TransactionsAddRow @formData="(emitted) => (this.formData = emitted)" />
       </tbody>
     </table>
     <form id="newEntry" action="post" class="m-auto mt-5">
@@ -40,14 +40,13 @@ export default {
   data() {
     return {
       tableHeaders: ['Date', 'Account', 'Amount (PHP)', 'Category', 'Description'],
-      newRowData: null,
+      formData: null,
     }
   },
   components: { TransactionsAddRow },
   methods: {
     submitTable() {
-      let f = document.querySelector('form')
-      console.log(f)
+      console.log(this.formData)
     },
   },
 }
