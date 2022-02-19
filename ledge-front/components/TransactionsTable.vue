@@ -22,30 +22,17 @@
           <td class="w-36">{{ transaction.category }}</td>
           <td class="w-36">{{ transaction.description }}</td>
         </tr>
-        <tr class="bg-gray-300">
-          <td><input type="date" form="newEntry" /></td>
-          <td>
-            <select form="newEntry" class="w-36">
-              <option>FOO</option>
-              <option>Bar</option>
-              <option>bAz</option>
-            </select>
-          </td>
-          <td>
-            <input type="number" form="newEntry" value="0.00" class="text-right" />
-          </td>
-          <td><input type="text" form="newEntry" value="..." /></td>
-          <td><input type="text" form="newEntry" value="..." /></td>
-        </tr>
+        <TransactionsAddRow />
       </tbody>
     </table>
     <form id="newEntry" class="m-auto mt-5">
-      <button type="button" onclick="javascript:console.log(document.getElementById('newEntry').data)">Submit</button>
+      <button type="button" @click="submitTable">Submit</button>
     </form>
   </div>
 </template>
 
 <script>
+import TransactionsAddRow from './TransactionsAddRow.vue'
 export default {
   props: {
     tableData: Array,
@@ -54,6 +41,13 @@ export default {
     return {
       tableHeaders: ['Date', 'Account', 'Amount (PHP)', 'Category', 'Description'],
     }
+  },
+  components: { TransactionsAddRow },
+  methods: {
+    submitTable() {
+      let f = document.querySelector('form')
+      console.log(f)
+    },
   },
 }
 </script>
